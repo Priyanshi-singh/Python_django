@@ -1,0 +1,100 @@
+<!-- doc for below code excluding everything witten in body tag -->
+<!-- htmldog website-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Page</title>
+</head>
+<body>
+    <h1>HTML basics</h1>
+    <p>My name is  Priyanshi Singh</p>
+    <!-- to create 100 word paragraph and the words are dummy words-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus aperiam fuga, culpa unde nam officiis enim nisi voluptatibus dolore explicabo quos esse corrupti. Temporibus iste ab veniam saepe repellat accusamus eius quasi provident aperiam dolore dolorum aut doloribus quas assumenda similique alias exercitationem, in est. Odio quos amet repellendus asperiores excepturi ducimus ullam sunt vero, neque, similique repellat dolores obcaecati molestiae nisi quasi dignissimos consequatur voluptatem deserunt assumenda expedita nemo quidem eum earum nulla! Voluptatem enim, iste fugiat harum explicabo aperiam nam repellendus dolorem maiores earum excepturi cum illum ad dignissimos culpa unde repudiandae aut! Alias illum cumque non!</p>
+    <a href="http://digipodium.com" target="_blank" rel="noopener noreferrer"></a>
+    <img src="assests/images/IMG_20180710_110716.jpg" width="20px" height="40px" alt="IMAGE">
+    <!--ordered list-->
+    <ol>
+        <h1>Social Media</h1>
+        <a href="#">Facebook</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Gmail</a>
+        <a href="#">YouTube</a>
+    </ol>
+    <!-- Table-->
+        <!-- tr*5>td*4>lorem1--> 
+    
+    <table border"1">
+        <thead>
+            <tr>
+                <th colspan="4">
+                    Report
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>abc</td>
+                <td>fh</td>
+                <td>dhjfh</td>
+                <td>hcdjf</td>
+            </tr>
+            <tr>
+                <td>ffd</td>
+                <td>dd</td>
+                <td>dud</td>
+                <td>dj</td>
+            </tr>
+            <tr>
+                <td>ff</td>
+                <td>er</td>
+                <td>dddd</td>
+                <td>vcd</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">fdfhdfh</td>
+            </tr>
+        </tfoot>
+    </table>
+   <!-- End of Table -->
+
+    <!-- Form-->
+    <form action="" method="post">
+        <h1>Form</h1>
+        <input type="text" name="name" id="name" placeholder="Enter your name" maxlength="10" > <br>
+        <input type="email" name="email" id="email" placeholder="Enter your email"> <br>
+        <input type="password" name="password" id="password" placeholder="Enter your password" minlength="4" maxlength="8">
+        <br>
+        <input type="file" name="photo" id="photo">
+        <br>
+        <input type="date" name="date" id="date">
+        <br>
+        <!-- in ckeckbox name must be same and followed by []-->
+        <!-- alt + shift +down to duplicate the same line-->
+        <input type="checkbox" name="agree[]" id="agree" placeholder="Do you agree?">Do you agree?
+        <input type="checkbox" name="agree[]" id="agree" placeholder="Do you agree?">Do you like icecream?
+        <br>
+        <input type="radio" name="gender" id="gender" value="Male">Male
+        <br>
+        <input type="radio" name="gender" id="gender" value="Female">Female
+        <br>
+        <input type="range" name="range" id="range"> <!-- for slider-->
+        <br>
+        how much do you want to learn?
+        <select name="learn" id="learn">
+            <option value="">Kindergarten</option>
+            <option value="">10th</option>
+            <option value="">12th</option>
+            <option value="">graduation</option>
+            <option value="">Post graduation</option>
+        </select>
+        <hr>
+        <input type="hidden" name="session_number" value="123">
+        <input type="submit" value="Submit">Submit
+    </form>
+    <!-- End of Form-->
+
+</body>
+</html>
