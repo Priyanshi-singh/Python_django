@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Example</title>
+</head>
+<body>
+    <h1 class="heading">
+        This is sample Heading
+    </h1>
+    <button class="btn" onclick="changeMsg()">
+        click here
+    </button>
+
+    <script>
+        //creating variable for button and heading
+        
+        let heading= document.querySelector('h1')
+        let btn = document.querySelector('.btn')
+        function changeMsg(){
+            heading.innerText="This is updated heading"
+        }
+        
+    </script>
+</body>
+</html>

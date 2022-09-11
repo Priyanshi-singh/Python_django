@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        form{
+            display:flex;
+            flex-flow:column wrap;
+            gap:.5rem;
+            width:100%;
+            max-width:200px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="one">Enter First Number</label>
+        <input type="number" id="one" name="one">
+        <label for="two">Enter Second Number</label>
+        <input type="number" id="two" name="two">
+        <button class="add" >Add Values</button>
+        <h4 class="answer">Answer : N/A</h4>
+    </form>
+    <script>
+        var answer = document.querySelector('h4')
+        let btn = document.querySelector('.add')
+        btn.onclick = function(e){ 
+            e.preventDefault() // used for use of proper functionality of javascript
+           
+            var one = document.querySelector('#one').value
+            var two = document.querySelector('#two').value
+            console.log(one,two)
+            
+            answer.innerText=parseInt(one) + parseInt(two)
+        }
+
+    </script>
+</body>
+</html>

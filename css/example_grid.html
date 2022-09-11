@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        @keyframes wobble {
+            0%{
+                rotate:-10deg;
+                border-radius:300px;
+            }
+            25%{
+                rotate:10deg;
+                transform:skewY(-5deg);
+                box-shadow:2px 6px 2px black;
+            }
+            50%{
+                rotate:-10deg;
+            }
+            75%{
+                rotate:10deg;
+                transform:skewY(5deg);
+            }
+            100%{
+                rotate:-10deg;
+                transform: skewY(0);
+                box-shadow:1px 1px 2px black;
+                border-radius:0px;
+            }
+        }
+        .container {
+                display:grid;
+                /* to set grid column wise*/
+                grid-template-columns: 25% 25% 25% 25%;
+                /*grid-template-columns: 1fr 1fr 1fr 1fr;  fr is for fraction*/
+                /*grid-template-columns: repeat(4,12fr);  repeat for writing one thing many times*/
+                grid-template-columns: repeat(auto-fill,minmax(400px,1fr)); /* to make grid responsive */
+                gap:1rem; /* for both row and column gap */
+                background:wheat;
+        }
+        .image{
+            box-shadow: 0 0 2px #333;
+            padding:1rem;
+            text-align: center;
+            /* scale:2; to increase the sze of image*/
+            /*rotate:45deg;  to rotate image*/
+            /*translate: 100px 200px;  it shifts to x and y axis */
+            /*transform:skew(20deg,30deg); to tilt the image*/
+            transition:all .11s ease; /* all is for property .11s is for duration and ease is timing-function*/
+            animation: wobble 5s ease infinite;
+            
+        }
+        .image:hover{
+            rotate:10deg;
+            transform:skew(-20deg);
+            background-color: #fff;
+            
+        }
+    </style>
+</head>
+<body>
+    <!--.container>div.image*12>img -->
+    <div class="container">
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.05 PM (1).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.05 PM (2).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.05 PM.jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.06 PM (1).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.06 PM (2).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.06 PM.jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.07 PM (1).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.07 PM (2).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.07 PM.jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.08 PM (1).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.08 PM (2).jpeg" alt="" width="200"></div>
+        <div class="image"><img src="Assests/images/WhatsApp Image 2022-09-10 at 5.22.08 PM.jpeg" alt="" width="200"></div>
+    </div>
+</body>
+</html>
