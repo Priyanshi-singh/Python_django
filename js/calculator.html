@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        .container{
+            display: inline-flexbox;
+            background-color: bisque;
+            width:600px;
+            margin:auto;
+            align-items: center;
+
+        }
+        form{
+            display:flex;
+            flex-flow:column wrap;
+            gap:.5rem;
+            width:100%;
+            max-width:300px;
+            margin:auto;
+            padding-top:5rem;
+        }
+        .btns{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="calculator">
+            <label for="one">Enter First Number</label>
+            <input type="number" placeholder="Enter First Number">
+            <label for="">Enter Second Number</label>
+            <input type="number" placeholder="Enter Second Number">
+            <div class="btns">
+                <button class="add">+</button>
+                <button class="sub">-</button>
+                <button class="multiply">*</button>
+                <button class="divide">/</button>
+                <button class="submit">SUBMIT</button>
+            </div>
+            <div>
+                <label for="answer" class="ans"></label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
