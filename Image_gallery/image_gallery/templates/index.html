@@ -1,0 +1,39 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-5 fw-bold text-center">Image Gallery</h1>
+                <a href="{% url 'add_image' %}" class="btn btn-outline-primary">Add Image <i class="bi bi-cloud-arrow-up"></i></a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            
+            {% for item in images %}
+            <div class="col-md-6 col-lg-3 mb-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{item.image.url}}" alt="{{item.title}}" height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">{{item.category}}</p>
+                        <div class="card-footer text-center ">
+                            <a class="btn" href="{% url 'view_image' item.id %}"><i class="bi bi-eye text-primary"></i></a>
+                            <a class="btn" href="{% url 'delete_image' item.id %}"><i class="bi bi-trash text-danger"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}  
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+    
