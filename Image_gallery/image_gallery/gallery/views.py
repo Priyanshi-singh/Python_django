@@ -22,11 +22,34 @@ def index(request):
     return render(request, 'index.html' , ctx)
 
 def add_category(request):
-    pass
+    form = CategoryForm()
+    if request.method=="POST":
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            category=form.cleaned_data['category_name']
+            category= Category(name=category)
+            category.save()
+            return redirect('index')
+    ctx={
+        'form': form,
+        'category' : 'Add Category',
+            
+        }
+    return render(request,'add_category.html',ctx)
 
 def add_image(request): 
-    form = ImageForm()  #it creates an empty form object
 
+    form = ImageForm()  #it creates an empty form object
+    
+    if request.method=="POST":
+        form=ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            title=form.cleaned_data['title']
+            category=form.cleaned_data['category']
+            image= form.cleaned_data['image']
+            img=Image(title=title, category=category, image= image)
+            img.save()
+            return redirect('index')
     ctx={
         'form' : form,
         'title' : 'Add Image',

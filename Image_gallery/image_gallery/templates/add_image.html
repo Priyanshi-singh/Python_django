@@ -4,10 +4,10 @@
 {% block content %}
 
 {% load django_bootstrap5 %}
-    <div class="container h-100">
+    <div class="container h-100 w-50">
         <div class="row">
             <div class="col">
-                <form  method="post">
+                <form  method="post" enctype="multipart/form-data"> <!-- enctype is used for any document submission other than text-->
                     {% csrf_token %}  <!-- form is submitable -->
                     {% bootstrap_form form %}
                     {% bootstrap_button button_type="submit" content="Upload" %}
