@@ -21,7 +21,11 @@ def article_create(request):
     tag_form = TagForm()
     image_form = ImageForm()
     if article_form.is_valid():
-        pass
+        print(article_form.cleaned_data)
+        article = article_form.save(commit=False)
+        article.author = request.user
+        messages.success(request,'Article Created Successfully')
+        
     ctx['article_form'] = article_form
     ctx['category_form'] = category_form
     ctx['tag_form'] = tag_form
