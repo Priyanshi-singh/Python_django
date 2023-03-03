@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+<div class="container vh-80">
+    <div class="row align-items-center justify-content-center h-100">
+        <div class="col-md-6 col-lg-4">
+            <img src="{{img.image.url}}" class="img-fluid shadow-lg" alt="{{img.title}}">
+        </div>
+        <div class="col-md-6 col-lg-8">
+            <h1 style="padding-bottom: 40px; padding-top:20px;">{{img.title}}</h1>
+            <p>{{img.description}}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    
+
+{% block css %}
+    <style>
+     main {
+        margin:20px 20px 20px 20px;
+       background-color: white;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color:rgb(255, 66, 66);
+        text-align:center;
+        font-weight: bolder;
+    }
+    img{
+        border-radius: 10%;
+        border:10px 10px 10px 10px solid  #A5F1E9;
+        box-shadow: rgba(32, 128, 128, 0.26);
+    }
+    p{
+        color:#f75d49;
+        font-size:medium;
+        
+    }
+    </style>
+{% endblock css %}
+    

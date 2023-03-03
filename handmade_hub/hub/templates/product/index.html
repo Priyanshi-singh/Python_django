@@ -1,0 +1,133 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+<!------------  To Display Image  ----------->
+
+<div class="container image-container">
+    <div class="row">
+        <h2 class="product text-center " style="color:rgb(255, 63, 15); font-weight: bold;"></i>Product List</h2><br><br>
+        {% for item in images %}
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="card img-card">
+                <img class="card-img-top" src="{{item.image.url}}" alt="{{item.title}}" height="230px">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">{{item.category}}</p>
+                    <div class="card-footer text-center ">   
+                        <a class="btn" href="{% url 'view_image' item.id %}"><i class="bi bi-card-image"></i></a> 
+                        <a class="btn" href="{% url 'cart' item.id %}"><i class="bi bi-cart3"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}  
+    </div>
+</div>
+
+<!------------  About the Seller 
+<div class="container-fluid seller" >
+        <div class="container-fluid" id="section1">
+            <b>ABOUT THE SELLER</b>
+            <p class="padding">
+                Priyanshi Singh is a college student. She is a very creative person and love to try making new things.<br>
+                So during lockdown she decided to create a instagram page to give wings to her creativity.
+            </p>
+            </div>    
+            <div class="container-fluid" id="section2">
+                    <img src="{% static 'images/seller.png' %}" width="20%" class="img-fluid  mx-auto ">
+            </div>
+        </div>
+    </div>
+</div>
+ ------------>
+<!------------  Query Form -------------->
+    <div class="container-fluid query text-center">
+        <h4 class="text-center">LEAVE A QUERY</h4>
+                <form class=" query-form text-center"action="#" method="post">
+                    <div class="form-group" method="POST">
+                      <label for="name">Name</label>
+                      <input type="text"
+                        class="form-control" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email"
+                        class="form-control" name="email" id="email" placeholder="Enter your Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="query">Enter your query</label>
+                      <textarea class="form-control form-control-sm" name="query" id="query" cols="30" rows="10">Comment</textarea> 
+                    </div><br>
+                    <button class="form-group query-button">
+                        Submit Your Query
+                    </button>
+                </form>
+    </div>
+
+    
+    
+{% endblock content %}
+
+
+{% block css %}
+<style>
+        #footer{
+            padding:10px 10px 10px 10px;
+            background-color:#eb5b5bec;
+            color:black;
+
+        }
+        .seller{
+            padding:10px 10px 10px 10px;
+            display:flex;
+            width:65%;
+            height:auto;
+            border:2px solid #eb5b5bec;
+            box-shadow: 3px 3px 3px 3px rgb(243, 173, 173);
+            
+
+        }
+        #section1{
+            width:70%;
+            float:left;
+        }
+        #section2{
+            width:30%;
+            float:right;
+        }
+        .query{
+            padding:10px 10px 10px 10px;
+            margin:5% 0 5% 10%;
+            border:2px  solid #eb5b5bec;
+            box-shadow: 2px 2px 2px 2px #a8a697;
+            width:75%;
+        }
+        .query-button{
+            background-color: #f16a6a;
+            color: white;
+            padding-bottom:5px;
+            border-radius:5px;
+            border:1px solid white;
+        }
+        .query-form{
+            width:90%;
+            margin-left:4%;   
+        }
+        
+        .img-card{
+            border: 2px solid #f16a6a;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .image-container{
+            padding-bottom:10vh;
+            padding-top:10vh;
+        }
+</style>
+{% endblock css %}
+    
+
+{% block js %}
+    
+{% endblock js %}
+    

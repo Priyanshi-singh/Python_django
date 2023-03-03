@@ -19,7 +19,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Add Media</h3>
                 </div>
-                <form action="" method="post" class="card-body">
+                <form action="" id='imageform' method="post" class="card-body">
                     {% csrf_token %}
                     {% bootstrap_form image_form %}
                     {% bootstrap_button "Add Media" type="submit" %}
@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h3>Add New Category</h3>
                 </div>
-                <form action="" method="post" class="card-body">
+                <form action="" id = 'catform' method="post" class="card-body">
                     {% csrf_token %}
                     {% bootstrap_form category_form %}
                     {% bootstrap_button "Add Category" type="submit" %}
@@ -40,7 +40,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Add Tags</h3>
                 </div>
-                <form action="" method="post" class="card-body">
+                <form action="" id='tagform' method="post" class="card-body">
                     {% csrf_token %}
                     {% bootstrap_form tag_form %}
                     {% bootstrap_button "Add Tags" type="submit" %}
@@ -55,3 +55,46 @@
 {% block css %}
 
 {% endblock %}
+
+
+{% block js %}
+<script
+src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+crossorigin="anonymous"></script>
+<script>
+    let catform = $('#catform');
+    let imageform = $('#imageform');
+    let tagform = $('#tagform');
+
+    catform.submit((e)=>{
+        e.preventDefault();
+        alert('You submitted the form');
+        $.ajax({
+            type: "post",
+            url: "{% url 'cat_create' %}",
+            data: catform.serialize(), 
+            dataType: "json",
+            success: function (response) {
+                    status = response.status;
+                    if (status == 'success'){
+                        id = response.id;
+                        name = response.name;
+                        alert("Category Added Successfully")
+                        let category = $('#id_category');
+                        category.append(<option value = "${id}">${name}</option>);
+                    } 
+            }
+        });
+    })
+    imageform.submit((e)=>{
+        e.preventDefault();
+        alert('You submitted the form');
+    })
+    tagform.submit((e)=>{
+        e.preventDefault();
+        alert('You submitted the form');
+    })
+</script>
+{% endblock js %}
+    
